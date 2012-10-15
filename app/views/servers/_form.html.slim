@@ -1,0 +1,14 @@
+= simple_form_for @server do |f|
+  - if @server.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@server.errors.count, "error")} prohibited this server from being saved:"
+      ul
+        - @server.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.input :title
+  .field
+    = f.input :hostname
+
+  .actions = f.submit 'Save'

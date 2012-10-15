@@ -1,0 +1,16 @@
+= simple_form_for(@watch) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :oid
+    = f.input :interval
+    = f.input :multiplier
+    = f.input :accuracy
+    = f.input :units
+    = f.association :server
+    = f.input :enabled
+    = f.input :differential
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,10 @@
+= simple_form_for(@mib) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :oid
+    = f.input :name
+    = f.input :module
+
+  .form-actions
+    = f.button :submit

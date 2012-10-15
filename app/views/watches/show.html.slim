@@ -1,0 +1,30 @@
+p#notice = notice
+
+dl
+  dt Title:
+  dd = @watch.title
+  dt Oid:
+  dd = Mib[@watch.oid][:name]
+  dt Interval:
+  dd
+    = @watch.interval
+    |  minutes
+  dt Multiplier:
+  dd = @watch.multiplier
+  dt Accuracy:
+  dd = @watch.accuracy
+  dt Units:
+  dd = @watch.units
+  dt Server:
+  dd = @watch.server.title || '<no server>'
+  dt Enabled:
+  dd = @watch.enabled
+  dt Differential:
+  dd = @watch.differential
+
+  dt Current Value:
+  dd = @watch.query
+
+= link_to 'Edit', edit_watch_path(@watch)
+'|
+= link_to 'Back', watches_path

@@ -1,0 +1,23 @@
+h1 Listing mibs
+
+table.table.table-striped.table-bordered
+  tr
+    th Oid
+    th Name
+    th Module
+    th
+    th
+    th
+
+  - @mibs.each do |mib|
+    tr
+      td = mib.oid
+      td = mib.name
+      td = mib.module
+      td = link_to 'Show', mib
+      td = link_to 'Edit', edit_mib_path(mib)
+      td = link_to 'Destroy', mib, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Mib', new_mib_path

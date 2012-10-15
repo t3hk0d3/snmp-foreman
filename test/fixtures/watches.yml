@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  server_id: 1
+  mib_id: 1
+  last_value: MyString
+
+two:
+  server_id: 1
+  mib_id: 1
+  last_value: MyString

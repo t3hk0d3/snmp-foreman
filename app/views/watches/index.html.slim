@@ -1,0 +1,34 @@
+h1 Listing watches
+
+table.table.table-striped.table-bordered
+  tr
+    th Title
+    th Oid
+    th Interval
+    th Units
+    th Server
+    th Enabled
+    th Differential
+    th
+
+  - @watches.each do |watch|
+    tr
+      td = watch.title
+      td = watch.oid
+      td
+        = watch.interval
+        '  min
+      td= watch.units
+      td = link_to(watch.server.title, server_path(watch.server)) if watch.server
+      td = watch.enabled
+      td = watch.differential
+      td
+        = link_to 'Show', watch
+        |  -&nbsp;
+        = link_to 'Edit', edit_watch_path(watch)
+        |  -&nbsp;
+        = link_to 'Destroy', watch, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Watch', new_watch_path

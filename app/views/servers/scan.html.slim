@@ -1,0 +1,26 @@
+h2 Results of SNMP scanning
+
+table.table
+  thead
+    th #
+    th Name
+    th Type
+    th MTU
+    th Speed
+    th MAC
+    th Status
+    th IN
+    th OUT
+  tbody
+    - interface_table(@results).each_pair do |idx, iface|
+      tr
+        td = idx
+        td = iface['ifDescr']
+        td = iface['ifType']
+        td = iface['ifMtu']
+        td = "#{iface['ifSpeed'].to_i / 1000000} Mbit/s"
+        td = unpack_mac(iface['ifPhysAddress'])
+        td = "#{interface_status(iface['ifOperStatus'])}"
+        td = iface['ifInOctets']
+        td = iface['ifOutOctets']
+

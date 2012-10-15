@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  watch_id: 1
+  raw_data: MyString
+  value: MyString
+
+two:
+  watch_id: 1
+  raw_data: MyString
+  value: MyString

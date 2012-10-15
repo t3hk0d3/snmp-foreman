@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Oid:
+  = @mib.oid
+p
+  strong Name:
+  = @mib.name
+p
+  strong Module:
+  = @mib.module
+
+= link_to 'Edit', edit_mib_path(@mib)
+'|
+= link_to 'Back', mibs_path
